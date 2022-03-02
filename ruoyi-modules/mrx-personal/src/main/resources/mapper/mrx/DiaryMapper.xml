@@ -7,7 +7,19 @@
 
     <select id="selectDiaryList" resultType="com.ruoyi.mrx.domain.Diary">
         <include refid="selectDiaryVo"/>
-
+        <where>
+            deleted =0
+            <if test="weather != null  and weather != ''">and weather = #{weather}</if>
+            <if test="content != null  and content != ''">and content = #{content}</if>
+            <if test="diaryTime != null ">and diary_time = #{diaryTime}</if>
+            <if test="title != null  and title != ''">and title = #{title}</if>
+        </where>
+        order by update_time desc
+    </select>
+    <select id="selectDiaryById" resultType="com.ruoyi.mrx.domain.Diary">
+        <include refid="selectDiaryVo"/>
+        where id = #{id}
+        and deleted =0
     </select>
 
 

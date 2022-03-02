@@ -20,4 +20,11 @@ public class MrxDiaryServiceImpl implements IMrxDiaryService {
 
         return diaryMapper.selectDiaryList(diary);
     }
+
+    @Override
+    public Diary selectDiaryById(Long id) {
+        Diary diary = diaryMapper.selectDiaryById(id);
+
+        return diary;
+    }
 }

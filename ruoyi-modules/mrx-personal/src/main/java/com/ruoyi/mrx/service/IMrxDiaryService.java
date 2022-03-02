@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface IMrxDiaryService {
     List<Diary> selectDiaryList(Diary diary);
+
+    Diary selectDiaryById(Long id);
 }

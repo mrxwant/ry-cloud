@@ -12,4 +12,6 @@ public interface DiaryMapper {
      * @return 参数配置信息
      */
     public List<Diary> selectDiaryList(Diary diary);
+
+    Diary selectDiaryById(Long id);
 }
